@@ -9,11 +9,11 @@ DetectOutliers <- function(n, key = "")
 {
   if(key == "")
   {key <- test_key()}
-  x <- data.table::setDT(jsonlite::fromJSON(rawToChar(httr::POST("https://missingbias.p.rapidapi.com/DetectOutliers",
+  x <- jsonlite::fromJSON(rawToChar(httr::POST("https://missingbias.p.rapidapi.com/DetectOutliers",
                                                  httr::add_headers(`x-rapidapi-host` = 'detectoutliers.p.rapidapi.com/' ,
                                                                    `x-rapidapi-key`= key,
                                                                    `Content-Type` = "application/json"),
-                                                 body = as.list(n), encode = 'json')$content)))
-  x[, position := position +1] #Position is 0-indexed normally
+                                                 body = as.list(n), encode = 'json')$content))
+  x$position <- x$position +1 #Position is 0-indexed normally
   return(x)
 }
