@@ -4,10 +4,14 @@
 \alias{MissingRowsCols}
 \title{Get a report of missing values in a dataframe by row and column}
 \usage{
-MissingRowsCols(missing_data, key = "")
+MissingRowsCols(missing_data, email = "", key = "")
 }
 \arguments{
 \item{missing_data}{A data.frame with potentially missing data.}
+
+\item{email}{The user email provided to receive the API key.}
+
+\item{key}{The API key received from scientificmicroservices.com . Can be left blank if the value is stored as 'scimicro_key' in .Renviron}
 }
 \value{
 A summary of percentage of missing data by row and column.
@@ -16,5 +20,5 @@ A summary of percentage of missing data by row and column.
 MissingRowsCols takes a dataframe and reports the percentage of missing data by row and column.
 }
 \examples{
-MissingRowsCols(data.frame(c(10, 11, 12), c(50, NA, 50), c(NA, NA, 14), c(50, 50, NA)))
+\dontrun{MissingRowsCols(missing_data = data.frame(c(10, 11, 12), c(50, NA, 50), c(NA, NA, 14), c(50, 50, NA)), email = 'info@scientificmicroservices.com')}
 }

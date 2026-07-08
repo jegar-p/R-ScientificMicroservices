@@ -4,10 +4,14 @@
 \alias{DetectOutliers}
 \title{Detect outliers in a vector of values}
 \usage{
-DetectOutliers(n, key = "")
+DetectOutliers(n, email = "", key = "")
 }
 \arguments{
 \item{n}{A vector of values}
+
+\item{email}{The user email provided to receive the API key.}
+
+\item{key}{The API key received from scientificmicroservices.com . Can be left blank if the value is stored as 'scimicro_key' in .Renviron}
 }
 \value{
 The position and value of outliers
@@ -16,5 +20,5 @@ The position and value of outliers
 DetectOutliers runs three statistical tests and returns the position and value of outlier (unusual) values in a vector.
 }
 \examples{
-DetectOutliers(c(9.9815,10.3615,9.3237,1135.3029,10.4203,9.3234,8.5119,9.2336,7.9625,7.1538))
+\dontrun{DetectOutliers(c(9.9815,10.3615,9.3237,1135.3029,10.4203,9.3234,8.5119,9.2336,7.9625,7.1538), email = 'info@scientificmicroservices.com')}
 }

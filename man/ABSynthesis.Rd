@@ -4,7 +4,14 @@
 \alias{ABSynthesis}
 \title{Combine AB test results for a summary uplift and p-value}
 \usage{
-ABSynthesis(successes_base, base_n, successes_variant, variant_n, key = "")
+ABSynthesis(
+  successes_base,
+  base_n,
+  successes_variant,
+  variant_n,
+  email = "",
+  key = ""
+)
 }
 \arguments{
 \item{successes_base}{Count of responses in the base condition}
@@ -14,6 +21,10 @@ ABSynthesis(successes_base, base_n, successes_variant, variant_n, key = "")
 \item{successes_variant}{Count of responses in the base condition}
 
 \item{variant_n}{Count of visitors exposed to the base condition}
+
+\item{email}{The user email provided to receive the API key.}
+
+\item{key}{The API key received from scientificmicroservices.com . Can be left blank if the value is stored as 'scimicro_key' in .Renviron}
 }
 \value{
 Summary uplift and p-value of a meta-analysis of online controlled experiments
@@ -22,5 +33,5 @@ Summary uplift and p-value of a meta-analysis of online controlled experiments
 ABSynthesis combines experiments with binomial outcomes (successes and trials), reporting the summary uplift and p-value.
 }
 \examples{
-ABSynthesis(c(10, 11, 12), c(50, 50, 50), c(12, 13, 14), c(50, 50, 50))
+\dontrun{ABSynthesis(c(10, 11, 12), c(50, 50, 50), c(12, 13, 14), c(50, 50, 50), email = 'info@scientificmicroservices.com')}
 }
