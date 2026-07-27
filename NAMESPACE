@@ -3,4 +3,5 @@
 export(ABSynthesis)
 export(DetectOutliers)
 export(MissingBias)
+export(MissingGraph)
 export(MissingRowsCols)
